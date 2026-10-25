@@ -1,5 +1,5 @@
 /* =============================================
-   CRANBERRY OVERSEAS — script.js
+   YOGI'S LANGUAGE SCHOOL — script.js
    GSAP 3.12.2 + ScrollTrigger
    ============================================= */
 
@@ -7,215 +7,191 @@
 
 const DESTINATIONS = [
   {
-    name: 'United Kingdom',
-    abbr: 'UK',
-    img: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Home to globally ranked institutions, the UK offers one-year Masters programmes, a 2-year Graduate Route post-study work visa, and access to one of the world\'s strongest academic cultures.',
-    tags: ['1-yr Masters', 'Graduate Route Visa', 'Top 4 globally']
+    name: 'Daily Conversations for Beginners',
+    abbr: 'A1 · Beginner',
+    img: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80',
+    desc: 'Foundational dialogues covering greetings, introductions, shopping, food ordering, and daily essentials.',
+    tags: ['A1 · Beginner', '50 Topics', 'Daily Essentials'],
+    btn: 'Start Stage 01 →'
   },
   {
-    name: 'Australia',
-    abbr: 'AUS',
-    img: 'https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Australia boasts 7 of the world\'s top 100 universities, a 2–4 year post-study work visa, a high quality of life, and a multicultural environment that welcomes international students.',
-    tags: ['2–4 yr Post-Study Visa', 'Top 100 universities', 'High quality of life']
+    name: 'Daily Conversations for Elementary Learners',
+    abbr: 'A2 · Elementary',
+    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
+    desc: 'Practical everyday situations including routines, weather, making plans, work and life balance.',
+    tags: ['A2 · Elementary', '50 Topics', 'Conversational Fluency'],
+    btn: 'Start Stage 02 →'
   },
   {
-    name: 'USA',
-    abbr: 'USA',
-    img: 'https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&fit=crop&w=1200&q=80',
-    desc: 'The United States hosts the world\'s largest number of top-ranked universities, world-class research facilities, and an OPT programme that allows 3 years of post-study work for STEM graduates.',
-    tags: ['3-yr OPT for STEM', 'Ivy League access', 'World\'s top research']
+    name: 'Situational Dialogues',
+    abbr: 'A2 · Practical',
+    img: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80',
+    desc: 'Real-world scenarios for airports, bank transactions, doctor appointments, hotel check-ins, and interviews.',
+    tags: ['A2 · Practical', '50 Situations', 'Real-World Scenarios'],
+    btn: 'Start Stage 03 →'
   },
   {
-    name: 'Canada',
-    abbr: 'CAN',
-    img: 'https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Canada offers a clear pathway to permanent residency, 3-year post-graduation work permits, affordable tuition compared to the US, and a globally respected education system.',
-    tags: ['PR Pathway', '3-yr Work Permit', 'Affordable tuition']
+    name: 'Speaking Patterns',
+    abbr: 'All Levels · Patterns',
+    img: 'https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=1200&q=80',
+    desc: 'Master 70 habitual sentence starters and phrase structures native speakers use in spontaneous conversation.',
+    tags: ['All Levels · Patterns', '70 Patterns', 'Sentence Habits'],
+    btn: 'Start Stage 04 →'
   },
   {
-    name: 'Ireland',
-    abbr: 'IRL',
-    img: 'https://images.unsplash.com/photo-1564430789644-aa45c3cc9c14?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Ireland is Europe\'s fastest-growing economy, home to global tech giants, offering a 2-year post-study stay-back visa, English-medium education, and access to the European job market.',
-    tags: ['2-yr Stay-Back Visa', 'EU job market', 'English medium']
-  },
-  {
-    name: 'New Zealand',
-    abbr: 'NZ',
-    img: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1200&q=80',
-    desc: 'New Zealand combines world-class universities with an exceptional quality of life, a post-study work visa of up to 3 years, and a welcoming, safe multicultural society.',
-    tags: ['3-yr Post-Study Visa', 'Safe environment', 'World-class quality']
-  },
-  {
-    name: 'Singapore',
-    abbr: 'SGP',
-    img: 'https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Singapore is Asia\'s premier education and business hub — home to top-ranked universities, a strong English-language environment, and unmatched connectivity to global careers.',
-    tags: ['Asia\'s business hub', 'Top-ranked unis', 'English medium']
-  },
-  {
-    name: 'Dubai & UAE',
-    abbr: 'UAE',
-    img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80',
-    desc: 'Dubai\'s international campuses bring world-class education to a tax-free, globally connected gateway — with no language barriers, proximity to India, and strong career prospects.',
-    tags: ['No language barrier', 'Tax-free environment', 'Global connectivity']
-  },
-  {
-    name: 'Europe',
-    abbr: 'EUR',
-    img: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80',
-    desc: 'European universities offer world-class education — often at lower tuition than the UK or US — with programmes in English, Schengen Zone access, and a rich cultural experience.',
-    tags: ['Low tuition fees', 'Schengen access', 'English programmes']
+    name: 'Essential Grammar Rules',
+    abbr: 'Grammar · Visual',
+    img: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1200&q=80',
+    desc: 'Key English grammar principles explained clearly through structured visual flow diagrams rather than complex jargon.',
+    tags: ['Grammar · Visual', '50 Rules', 'Clear & Practical'],
+    btn: 'Start Stage 05 →'
   }
 ];
 
 const UNIVERSITIES_R1 = [
-  { name: 'University of Oxford', flag: '🇬🇧' },
-  { name: 'University of Cambridge', flag: '🇬🇧' },
-  { name: 'Harvard University', flag: '🇺🇸' },
-  { name: 'MIT', flag: '🇺🇸' },
-  { name: 'University of Melbourne', flag: '🇦🇺' },
-  { name: 'Trinity College Dublin', flag: '🇮🇪' },
-  { name: 'University of Toronto', flag: '🇨🇦' },
-  { name: 'NUS Singapore', flag: '🇸🇬' },
-  { name: 'University of Edinburgh', flag: '🇬🇧' },
-  { name: 'NYU', flag: '🇺🇸' },
-  { name: 'University College Dublin', flag: '🇮🇪' },
-  { name: 'University of British Columbia', flag: '🇨🇦' },
-  { name: 'University of Manchester', flag: '🇬🇧' },
-  { name: 'University of Sydney', flag: '🇦🇺' },
-  { name: 'IE Business School', flag: '🇪🇸' }
+  { name: 'Introducing Yourself', flag: '💬' },
+  { name: 'Talking About Daily Routines', flag: '⏰' },
+  { name: 'At the Airport Check-in', flag: '✈️' },
+  { name: 'Hotel Reservations & Inquiries', flag: '🏨' },
+  { name: 'Job Interview Dialogues', flag: '💼' },
+  { name: 'Doctor Consultation & Health', flag: '🩺' },
+  { name: 'Ordering at a Restaurant', flag: '☕' },
+  { name: 'Making Weekend Plans', flag: '📅' },
+  { name: 'Asking for Directions', flag: '🗺️' },
+  { name: 'Shopping & Price Inquiries', flag: '🛍️' },
+  { name: 'Hobbies & Free Time', flag: '🎨' },
+  { name: 'Expressing Opinions ("I think...")', flag: '💡' },
+  { name: 'Polite Requests ("Could you...")', flag: '🤝' },
+  { name: 'Present Simple & Continuous', flag: '📖' },
+  { name: 'IELTS Speaking Mock Drills', flag: '🎯' }
 ];
 
 const UNIVERSITIES_R2 = [
-  { name: 'University of Queensland', flag: '🇦🇺' },
-  { name: 'McGill University', flag: '🇨🇦' },
-  { name: 'NTU Singapore', flag: '🇸🇬' },
-  { name: 'Auckland University', flag: '🇳🇿' },
-  { name: 'Monash University', flag: '🇦🇺' },
-  { name: 'University of Leeds', flag: '🇬🇧' },
-  { name: 'University of Warwick', flag: '🇬🇧' },
-  { name: 'Purdue University', flag: '🇺🇸' },
-  { name: 'University of Galway', flag: '🇮🇪' },
-  { name: 'University of Calgary', flag: '🇨🇦' },
-  { name: 'University of Otago', flag: '🇳🇿' },
-  { name: 'ESCP Business School', flag: '🇫🇷' },
-  { name: 'RMIT University', flag: '🇦🇺' },
-  { name: 'Maastricht University', flag: '🇳🇱' },
-  { name: 'University of Nottingham', flag: '🇬🇧' }
+  { name: '70 Speaking Patterns', flag: '🗣️' },
+  { name: '50 Essential Grammar Rules', flag: '📘' },
+  { name: '50 Situational Dialogues', flag: '🎬' },
+  { name: '50 Daily Conversations (A1)', flag: '🌱' },
+  { name: '50 Daily Conversations (A2)', flag: '🌿' },
+  { name: 'Overcoming Speaking Hesitation', flag: '✨' },
+  { name: 'Workplace & Meeting Phrasing', flag: '📊' },
+  { name: 'Prepositions of Place & Time', flag: '📍' },
+  { name: 'TOEFL Academic Listening', flag: '🎧' },
+  { name: 'Natural Pronunciation Drills', flag: '🎙️' },
+  { name: 'Agreeing & Disagreeing Naturally', flag: '💭' },
+  { name: 'Essential Sentence Starters', flag: '⚡' },
+  { name: 'Guided Audio Practice', flag: '🔊' },
+  { name: 'Nashik Spoken English Batches', flag: '📍' },
+  { name: 'Confident Public Speaking', flag: '🏆' }
 ];
 
 const TESTIMONIALS = [
-  /* NOTE: Replace with real student testimonials from https://www.cranberryoverseas.com */
   {
-    quote: "Cranberry guided me through every step — from choosing the right programme at University of Melbourne to getting my visa approved in the first attempt. Their team genuinely cares about your success.",
-    name: "Priya Mehta",
-    detail: "Masters in Data Science · University of Melbourne, Australia",
-    init: "PM"
+    quote: "Yogi Sir’s dialogue drills completely removed my fear of speaking in English. Before joining, I used to hesitate in conversations, but practicing real situational dialogues gave me the confidence to speak fluently and naturally.",
+    name: "Rohan Kulkarni",
+    detail: "Spoken English & Communication Skills · Nashik",
+    init: "RK"
   },
   {
-    quote: "I was completely overwhelmed by the UK application process, but the Cranberry team made it feel manageable. They helped me secure a partial scholarship and my visa was approved within three weeks.",
-    name: "Rohan Desai",
-    detail: "MSc Computer Science · University of Edinburgh, UK",
-    init: "RD"
+    quote: "The 3-step method — Listen, Read, Speak — makes learning so intuitive. Rather than memorizing rules from a textbook, we practiced speaking out loud every day. My pronunciation and fluency improved dramatically.",
+    name: "Pooja Patil",
+    detail: "Everyday English Fluency · Yogi's Language School",
+    init: "PP"
   },
   {
-    quote: "The counsellors at Cranberry understood exactly what I was looking for — they matched me with the perfect university in Canada that fit my budget AND my career goals. I can't thank them enough.",
-    name: "Ananya Sharma",
-    detail: "MBA · University of Toronto, Canada",
-    init: "AS"
+    quote: "The visual grammar diagrams made concepts click that I had struggled with for years. Yogi's Language School provides such a supportive and positive atmosphere where you never feel judged when making mistakes.",
+    name: "Amit Deshmukh",
+    detail: "English Enhancement Batch · Nashik",
+    init: "AD"
   },
   {
-    quote: "From IELTS coaching to visa documentation, Cranberry handled everything professionally. Their 99.4% visa success rate is real — I'm living proof. My dream of studying in Ireland came true.",
-    name: "Vikram Joshi",
-    detail: "MSc Finance · Trinity College Dublin, Ireland",
-    init: "VJ"
+    quote: "The IELTS preparation with Yogi Sir was thorough and practical. The speaking mock tests and personalized feedback on my phrasing helped me achieve my target band score on the first attempt.",
+    name: "Snehal Shinde",
+    detail: "IELTS Preparation Batch · Yogi's Language School",
+    init: "SS"
   },
   {
-    quote: "My parents were very hesitant about sending me abroad, but Cranberry's counsellors took the time to address all their concerns. That personal touch made all the difference. Now I'm thriving in Singapore.",
-    name: "Sneha Patil",
-    detail: "Bachelor of Business · NUS Singapore",
-    init: "SP"
+    quote: "Learning the 70 speaking patterns gave me the sentence structures native speakers use every day. Now I don't have to pause and translate in my head before answering. Truly the best language institute in Nashik!",
+    name: "Gaurav Joshi",
+    detail: "Communication Skills & Dialogue Drills · Nashik",
+    init: "GJ"
   }
 ];
 
 const FAQS = [
   {
-    q: "What is the process for getting admission to a foreign university?",
-    a: "The admission process involves several stages: initial counselling to identify the right destination and programme, shortlisting universities based on your profile, preparing and submitting applications with required documents (academic transcripts, SOP, LORs), receiving offer letters, applying for a student visa, and finally pre-departure briefing. Cranberry guides you through every single step."
+    q: "How does the learning method work at Yogi's Language School?",
+    a: "Every lesson follows our proven 3-step format: 1. Listen — hit play and hear real conversations at natural, everyday speed; 2. Read — follow along with the complete transcript and phrase glossary; 3. Speak — practice out loud with guided dialogue prompts. This active approach builds natural speaking habits."
   },
   {
-    q: "How much does it cost to study abroad?",
-    a: "Costs vary widely by country, university, and programme. For example, UK Masters programmes typically cost £15,000–£35,000 per year in tuition, while Australia ranges from AUD 20,000–45,000 annually. Living expenses add another £800–£1,500/month depending on the city. Our counsellors will help you find the best fit for your budget, including scholarship and loan options."
+    q: "Who are the courses designed for?",
+    a: "Our courses are designed for students, job seekers, and working professionals who want to overcome hesitation, improve spoken English fluency, and develop strong communication skills. We offer levels from A1 (Beginner) to A2 (Elementary) and advanced communication."
   },
   {
-    q: "Is studying abroad safe for Indian students?",
-    a: "Yes — the countries we send students to (UK, Australia, USA, Canada, Ireland, Singapore, New Zealand, UAE, Europe) are all safe destinations with large Indian student communities, dedicated international student support offices at universities, and strong law enforcement. Our pre-departure briefing covers safety tips and practical guidance for each destination."
+    q: "Do you teach grammar, or only spoken English?",
+    a: "We teach both! Our 50 Essential Grammar Rules break down English grammar using simple, structured visual diagrams rather than confusing textbook jargon. You learn how grammar works naturally within real-world dialogue."
   },
   {
-    q: "Can I work while studying abroad?",
-    a: "Most countries allow international students to work part-time during their studies. The UK, Australia, and New Zealand allow 20 hours/week during term time and full-time during vacations. Canada allows 20 hours/week on-campus without a separate permit. The USA requires Curricular Practical Training (CPT) for off-campus work. Our counsellors will brief you on exact regulations for your chosen destination."
+    q: "What are the 70 Speaking Patterns?",
+    a: "Speaking patterns are habitual sentence starters and phrase structures that fluent speakers use in spontaneous conversation (e.g., expressing opinions, polite requests, agreeing, disagreeing). Mastering these patterns helps you speak without pausing to translate in your head."
   },
   {
-    q: "How does Cranberry's scholarship assistance work?",
-    a: "Our scholarship guidance improves your chances by up to 70% through profile building, early applications, and strong SOPs. We identify scholarships available at your target universities, advise on eligibility, help craft compelling applications, and ensure you apply well ahead of deadlines. Many of our students have secured partial or full scholarships."
+    q: "Do you offer IELTS and TOEFL preparation?",
+    a: "Yes. In addition to Spoken English and English Enhancement, Yogi's Language School provides focused preparation for both IELTS and TOEFL exams, covering Listening, Reading, Writing, and intensive Speaking mock sessions."
   },
   {
-    q: "What is Cranberry's visa success rate and how do you achieve it?",
-    a: "Our visa success rate is 99.4% — achieved through meticulous documentation, thorough mock interviews, and ensuring every application is prepared in complete compliance with the destination country's requirements. Our visa specialists have deep knowledge of immigration rules for all 9+ countries we cover and stay continuously updated on policy changes."
+    q: "Can beginners with very basic English join?",
+    a: "Absolutely. Our A1 Daily Conversations track starts with absolute basics — greetings, introductions, shopping, food ordering, and asking for directions. Our supportive mentors ensure a friendly, encouraging environment for all beginners."
   },
   {
-    q: "Which test scores do I need for studying abroad?",
-    a: "The requirements vary by destination: UK/Australia/Canada/NZ typically require IELTS (6.0–7.0) or PTE; USA often requires TOEFL (80–100) and GRE/GMAT for postgraduate courses; some European universities accept IELTS or TOEFL. SAT is needed for US undergraduate admissions. Cranberry offers coaching for all these exams at our branches."
+    q: "What are Situational Dialogues?",
+    a: "Situational Dialogues prepare you for real-world scenarios you encounter in daily life, work, and travel — such as checking in at an airport, speaking to a doctor, hotel reservations, bank transactions, and job interviews."
   },
   {
-    q: "How soon should I start the application process?",
-    a: "We recommend starting at least 12–18 months before your intended intake. This allows sufficient time for test preparation, shortlisting universities, preparing documents, applying for universities, waiting for offer letters, arranging finances, and completing the visa process. Starting early also improves your scholarship chances significantly."
+    q: "Where is Yogi's Language School located?",
+    a: "Yogi's Language School is based in Nashik, Maharashtra. You can explore our Learning Hub online, follow our lessons on Instagram (@yogislanguageschool / @imyogisir), or get in touch for batch timings and enrollment details."
   }
 ];
 
 const BRANCHES = {
-  thane: {
-    name: "Thane (HQ)",
-    address: "105-106, City Centre, Ghodbunder Road, Thane West – 400615",
-    phone: "+91 22 4123 4444",
-    mobile: "+91 98672 36666",
-    email: "thane@cranberryoverseas.com",
-    hours: "Mon–Sat: 10:00 AM – 7:00 PM"
-  },
-  dadar: {
-    name: "Dadar",
-    address: "3rd Floor, Guru Building, Dadar West, Mumbai – 400028",
-    phone: "+91 22 4123 4445",
-    mobile: "+91 98672 36667",
-    email: "dadar@cranberryoverseas.com",
-    hours: "Mon–Sat: 10:00 AM – 7:00 PM"
-  },
   nashik: {
-    name: "Nashik",
-    address: "2nd Floor, Trade Center, College Road, Nashik – 422005",
-    phone: "+91 253 2318 000",
-    mobile: "+91 98672 36668",
-    email: "nashik@cranberryoverseas.com",
-    hours: "Mon–Sat: 10:00 AM – 7:00 PM"
+    name: "Nashik Institute (Offline Classroom)",
+    address: "College Road / Ramdas Colony, Nashik, Maharashtra",
+    phone: "Nashik, Maharashtra",
+    mobile: "@yogislanguageschool",
+    email: "Instagram: @imyogisir",
+    hours: "Mon–Sat: 9:00 AM – 7:00 PM"
   },
-  dombivli: {
-    name: "Dombivli",
-    address: "Shop No. 5, Arihant Arcade, Manpada Road, Dombivli East – 421201",
-    phone: "+91 251 2873 000",
-    mobile: "+91 98672 36669",
-    email: "dombivli@cranberryoverseas.com",
-    hours: "Mon–Sat: 10:00 AM – 7:00 PM"
+  online: {
+    name: "Online Interactive Batches",
+    address: "Live Virtual Sessions · Pan-India & Global Learners",
+    phone: "Live Zoom / Google Meet",
+    mobile: "@yogislanguageschool",
+    email: "DM via Instagram",
+    hours: "Flexible Morning & Evening Batches"
   },
-  vashi: {
-    name: "Vashi",
-    address: "305, Aravali Business Centre, Sector 17, Vashi, Navi Mumbai – 400703",
-    phone: "+91 22 4123 4446",
-    mobile: "+91 98672 36670",
-    email: "vashi@cranberryoverseas.com",
-    hours: "Mon–Sat: 10:00 AM – 7:00 PM"
+  ielts: {
+    name: "IELTS & TOEFL Prep Wing",
+    address: "Dedicated Exam Coaching · Nashik & Online",
+    phone: "Listening, Reading, Writing & Speaking",
+    mobile: "@yogislanguageschool",
+    email: "Exam Practice & Mock Tests",
+    hours: "Mon–Sat: 10:00 AM – 6:30 PM"
+  },
+  spoken: {
+    name: "Daily Dialogue & Speaking Club",
+    address: "Interactive Conversation Practice Groups",
+    phone: "A1 to B2 Dialogue Drills",
+    mobile: "@yogislanguageschool",
+    email: "Pronunciation & Confidence Coaching",
+    hours: "Daily Practice Sessions"
+  },
+  mentorship: {
+    name: "One-on-One Confidence Mentoring",
+    address: "Personalized Coaching with Yogi Sir",
+    phone: "Individual Accent & Hesitation Review",
+    mobile: "@imyogisir",
+    email: "Personalized Study Roadmap",
+    hours: "By Appointment"
   }
 };
 
@@ -224,34 +200,60 @@ const BRANCHES = {
 function initLoader() {
   const loader = document.getElementById('loader');
   const fill   = document.getElementById('loaderFill');
-  if (!loader) return;
+  if (!loader) {
+    document.body.classList.remove('is-loading');
+    return;
+  }
+
+  let dismissed = false;
+  const dismiss = () => {
+    if (dismissed) return;
+    dismissed = true;
+    loader.classList.add('done');
+    document.body.classList.remove('is-loading');
+    loader.style.opacity = '0';
+    loader.style.visibility = 'hidden';
+    loader.style.pointerEvents = 'none';
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 600);
+    // trigger hero reveal
+    if (typeof gsap !== 'undefined') {
+      try {
+        gsap.timeline()
+          .to('.hero__bg-img', { scale: 1, duration: 1.8, ease: 'power2.out' }, 0);
+      } catch (err) {}
+    }
+  };
 
   let progress = 0;
   const tick = () => {
-    progress += Math.random() * 18 + 4;
+    progress += Math.random() * 20 + 10;
     if (progress > 100) progress = 100;
-    fill.style.width = progress + '%';
+    if (fill) fill.style.width = progress + '%';
+
     if (progress < 100) {
-      setTimeout(tick, 80 + Math.random() * 60);
+      setTimeout(tick, 35);
     } else {
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        loader.style.transition = 'opacity 0.6s ease';
-        setTimeout(() => {
-          loader.style.display = 'none';
-          document.body.classList.remove('is-loading');
-        }, 600);
-      }, 200);
+      setTimeout(dismiss, 250);
     }
   };
-  tick();
+  setTimeout(tick, 50);
+
+  // Safety fallback: ensure loader is NEVER stuck on live deployments
+  setTimeout(dismiss, 1800);
 }
 
-/* ── CURSOR FOLLOWER ───────────────────────── */
+/* ── CUSTOM CURSOR ─────────────────────────── */
 
 function initCursor() {
   const cursor = document.getElementById('cursor');
-  if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
+  if (!cursor) return;
+  // Disable on touch devices
+  if (window.matchMedia('(pointer: coarse)').matches) {
+    cursor.style.display = 'none';
+    return;
+  }
 
   const dot  = cursor.querySelector('.cursor__dot');
   const ring = cursor.querySelector('.cursor__ring');
@@ -259,146 +261,170 @@ function initCursor() {
   let mx = 0, my = 0;
   let rx = 0, ry = 0;
 
-  document.addEventListener('mousemove', e => {
+  window.addEventListener('mousemove', e => {
     mx = e.clientX;
     my = e.clientY;
-    dot.style.left  = mx + 'px';
-    dot.style.top   = my + 'px';
+    if (dot) {
+      dot.style.transform = `translate(${mx - 3}px, ${my - 3}px)`;
+    }
   });
 
   const lerp = (a, b, t) => a + (b - a) * t;
 
   function animate() {
-    rx = lerp(rx, mx, 0.1);
-    ry = lerp(ry, my, 0.1);
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
+    rx = lerp(rx, mx, 0.15);
+    ry = lerp(ry, my, 0.15);
+    if (ring) {
+      ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+    }
     requestAnimationFrame(animate);
   }
   animate();
 
-  const hoverEls = document.querySelectorAll('a, button, .tmember, .testcard, .svc, .abroad__item');
+  // Hover states on interactive elements
+  const hoverEls = document.querySelectorAll('a, button, [role="button"], input, select, .dest__trigger');
   hoverEls.forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
 }
 
-/* ── NAV ───────────────────────────────────── */
+/* ── NAV & MOBILE MENU ─────────────────────── */
 
 function initNav() {
   const nav    = document.getElementById('nav');
   const burger = document.getElementById('navBurger');
   const menu   = document.getElementById('mMenu');
+  if (!nav) return;
 
+  // Scroll class
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  burger.addEventListener('click', () => {
-    const open = burger.classList.toggle('open');
-    menu.classList.toggle('open', open);
-    burger.setAttribute('aria-expanded', open);
-    menu.setAttribute('aria-hidden', !open);
-  });
-
-  menu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      burger.classList.remove('open');
-      menu.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      menu.setAttribute('aria-hidden', 'true');
+  // Mobile menu toggle
+  if (burger && menu) {
+    burger.addEventListener('click', () => {
+      const open = burger.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+      menu.classList.toggle('open', open);
+      menu.setAttribute('aria-hidden', !open);
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-  });
+
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
+    });
+  }
 }
 
-/* ── DESTINATIONS ──────────────────────────── */
+/* ── DESTINATIONS / PROGRAMS SECTION ──────────────────── */
 
 function initDestinations() {
-  /* Populate desktop sticky panel images */
+  const container = document.getElementById('destinations');
+  if (!container) return;
+
   const imgPanel = document.getElementById('destImages');
   const triggers = document.getElementById('destTriggers');
   const mobile   = document.getElementById('destMobile');
 
-  if (!imgPanel || !triggers || !mobile) return;
-
-  /* Build images */
+  // Desktop: build image layers + scroll triggers
   DESTINATIONS.forEach((d, i) => {
-    const div = document.createElement('div');
-    div.className = 'dest-img' + (i === 0 ? ' active' : '');
-    div.setAttribute('data-idx', i);
-    div.innerHTML = `<img src="${d.img}" alt="${d.name}" loading="${i === 0 ? 'eager' : 'lazy'}">`;
-    imgPanel.appendChild(div);
+    // Image layer
+    if (imgPanel) {
+      const div = document.createElement('div');
+      div.className = `dest-img ${i === 0 ? 'active' : ''}`;
+      div.setAttribute('data-idx', i);
+      div.innerHTML = `<img src="${d.img}" alt="${d.name}" loading="lazy">`;
+      imgPanel.appendChild(div);
+    }
+
+    // Scroll trigger spacer
+    if (triggers) {
+      const div = document.createElement('div');
+      div.className = 'dest-trigger';
+      div.setAttribute('data-idx', i);
+      triggers.appendChild(div);
+    }
+
+    // Mobile cards
+    if (mobile) {
+      const div = document.createElement('div');
+      div.className = 'dest-card-m';
+      div.innerHTML = `
+        <div class="dest-card-m__img">
+          <img src="${d.img}" alt="${d.name}" loading="lazy">
+        </div>
+        <div class="dest-card-m__body">
+          <div style="font-size:0.75rem;letter-spacing:0.12em;font-weight:700;color:var(--pink);margin-bottom:0.4rem;text-transform:uppercase;">${d.abbr}</div>
+          <h3>${d.name}</h3>
+          <p>${d.desc}</p>
+          <div class="dest-card-m__tags">
+            ${d.tags.map(t => `<span>${t}</span>`).join('')}
+          </div>
+          <a href="#contact" class="dest__cta btn btn--brand" style="margin-top:1rem;display:inline-block;padding:0.5rem 1.1rem;font-size:0.8rem;">${d.btn || 'Explore →'}</a>
+        </div>`;
+      mobile.appendChild(div);
+    }
   });
 
-  /* Build triggers (invisible scroll spacers) */
-  DESTINATIONS.forEach((_d, i) => {
-    const div = document.createElement('div');
-    div.className = 'dest-trigger';
-    div.setAttribute('data-idx', i);
-    triggers.appendChild(div);
-  });
-
-  /* Build mobile cards */
-  DESTINATIONS.forEach(d => {
-    const div = document.createElement('div');
-    div.className = 'dest-card-m';
-    div.innerHTML = `
-      <div class="dest-card-m__img">
-        <img src="${d.img}" alt="${d.name}" loading="lazy">
-      </div>
-      <div class="dest-card-m__body">
-        <h3>${d.name}</h3>
-        <p>${d.desc}</p>
-        <div class="dest-card-m__tags">${d.tags.map(t => `<span>${t}</span>`).join('')}</div>
-      </div>`;
-    mobile.appendChild(div);
-  });
-
-  /* Desktop: IntersectionObserver to switch active destination */
+  // Left static panel elements to update
   const leftCount = document.getElementById('destCount');
   const leftName  = document.getElementById('destName');
   const leftAbbr  = document.getElementById('destAbbr');
   const leftDesc  = document.getElementById('destDesc');
   const leftTags  = document.getElementById('destTags');
 
-  if (window.matchMedia('(max-width: 768px)').matches) return;
+  // IntersectionObserver on triggers for desktop panel updates
+  if (triggers && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = parseInt(entry.target.getAttribute('data-idx'), 10);
+          const d   = DESTINATIONS[idx];
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const idx = parseInt(entry.target.getAttribute('data-idx'), 10);
-      const d   = DESTINATIONS[idx];
+          // Update image layer
+          document.querySelectorAll('.dest-img').forEach((l, li) => {
+            l.classList.toggle('active', li === idx);
+          });
 
-      /* Swap images */
-      document.querySelectorAll('.dest-img').forEach((el, i) => {
-        el.classList.toggle('active', i === idx);
+          // Update left panel text with micro-fade
+          const panel = document.getElementById('destLeft');
+          if (panel) {
+            panel.classList.add('updating');
+            setTimeout(() => {
+              if (leftCount) leftCount.textContent = String(idx + 1).padStart(2, '0');
+              if (leftName)  leftName.textContent  = d.name;
+              if (leftAbbr)  leftAbbr.textContent  = d.abbr;
+              if (leftDesc)  leftDesc.textContent  = d.desc;
+              if (leftTags) {
+                leftTags.innerHTML = d.tags.map(t => `<span>${t}</span>`).join('');
+              }
+              const leftCta = panel.querySelector('.dest__cta');
+              if (leftCta && d.btn) leftCta.textContent = d.btn;
+              panel.classList.remove('updating');
+            }, 180);
+          }
+
+          // Active state on trigger item
+          document.querySelectorAll('.dest-trigger').forEach((tr, tri) => {
+            tr.classList.toggle('active', tri === idx);
+          });
+        }
       });
+    }, { threshold: 0.55 });
 
-      /* Update left panel with brief cross-fade */
-      const panel = document.getElementById('destLeft');
-      panel.style.opacity = '0';
-      panel.style.transform = 'translateY(10px)';
-      setTimeout(() => {
-        leftCount.textContent = String(idx + 1).padStart(2, '0');
-        leftName.textContent  = d.name;
-        leftAbbr.textContent  = d.abbr;
-        leftDesc.textContent  = d.desc;
-        leftTags.innerHTML    = d.tags.map(t => `<span>${t}</span>`).join('');
-        panel.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
-        panel.style.opacity   = '1';
-        panel.style.transform = 'none';
-      }, 120);
-    });
-  }, {
-    threshold: 0.5,
-    rootMargin: '-20% 0px -20% 0px'
-  });
-
-  document.querySelectorAll('.dest-trigger').forEach(el => observer.observe(el));
+    triggers.querySelectorAll('.dest-trigger').forEach(t => observer.observe(t));
+  }
 }
 
-/* ── UNIVERSITIES MARQUEE ──────────────────── */
+/* ── CURRICULUM TOPICS TICKER ──────────────── */
 
 function initUniversities() {
   function buildRow(container, unis) {
@@ -409,11 +435,11 @@ function initUniversities() {
     ).join('');
     container.innerHTML = html;
   }
-  buildRow(document.getElementById('univ1'), UNIVERSITIES_R1);
-  buildRow(document.getElementById('univ2'), UNIVERSITIES_R2);
+  buildRow(document.getElementById('tickerRow1'), UNIVERSITIES_R1);
+  buildRow(document.getElementById('tickerRow2'), UNIVERSITIES_R2);
 }
 
-/* ── TESTIMONIALS ──────────────────────────── */
+/* ── TESTIMONIALS SLIDER ───────────────────── */
 
 function initTestimonials() {
   const track = document.getElementById('testiTrack');
@@ -422,6 +448,7 @@ function initTestimonials() {
   const next  = document.getElementById('testiNext');
   if (!track) return;
 
+  // Build slides
   TESTIMONIALS.forEach((t, i) => {
     const slide = document.createElement('div');
     slide.className = 'testi-card';
@@ -438,10 +465,14 @@ function initTestimonials() {
       </div>`;
     track.appendChild(slide);
 
-    const dot = document.createElement('button');
-    dot.className = 'testi__dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Slide ${i + 1}`);
-    dots.appendChild(dot);
+    // Dot
+    if (dots) {
+      const dot = document.createElement('button');
+      dot.className = `testi__dot ${i === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.addEventListener('click', () => go(i));
+      dots.appendChild(dot);
+    }
   });
 
   let current = 0;
@@ -450,9 +481,11 @@ function initTestimonials() {
   function go(n) {
     current = (n + TESTIMONIALS.length) % TESTIMONIALS.length;
     track.style.transform = `translateX(-${current * 100}%)`;
-    document.querySelectorAll('.testi__dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
+    if (dots) {
+      dots.querySelectorAll('.testi__dot').forEach((d, di) => {
+        d.classList.toggle('active', di === current);
+      });
+    }
   }
 
   function startAuto() {
@@ -464,34 +497,41 @@ function initTestimonials() {
     startAuto();
   }
 
-  prev.addEventListener('click', () => { go(current - 1); resetAuto(); });
-  next.addEventListener('click', () => { go(current + 1); resetAuto(); });
+  if (prev) prev.addEventListener('click', () => { go(current - 1); resetAuto(); });
+  if (next) next.addEventListener('click', () => { go(current + 1); resetAuto(); });
 
-  document.querySelectorAll('.testi__dot').forEach((d, i) => {
-    d.addEventListener('click', () => { go(i); resetAuto(); });
-  });
+  // Touch swipe support
+  let touchStartX = 0;
+  track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) {
+      go(diff > 0 ? current + 1 : current - 1);
+      resetAuto();
+    }
+  }, { passive: true });
 
   startAuto();
 }
 
-/* ── FAQ ────────────────────────────────────── */
+/* ── FAQ ACCORDION ─────────────────────────── */
 
 function initFAQ() {
   const list = document.getElementById('faqList');
   if (!list) return;
 
-  FAQS.forEach(item => {
+  FAQS.forEach((item, i) => {
     const el = document.createElement('div');
     el.className = 'faq-item';
     el.innerHTML = `
-      <button class="faq-item__q" aria-expanded="false">
+      <button class="faq-item__q" aria-expanded="false" id="faqQ${i}">
         <span>${item.q}</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        <svg class="faq-item__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
       </button>
-      <div class="faq-item__a">
-        <div class="faq-item__a-inner">${item.a}</div>
+      <div class="faq-item__a" role="region" aria-labelledby="faqQ${i}">
+        <p>${item.a}</p>
       </div>`;
     list.appendChild(el);
   });
@@ -503,22 +543,22 @@ function initFAQ() {
     const answer = item.querySelector('.faq-item__a');
     const isOpen = item.classList.contains('open');
 
-    /* Close all */
-    list.querySelectorAll('.faq-item.open').forEach(open => {
-      open.classList.remove('open');
-      open.querySelector('.faq-item__a').style.maxHeight = '0';
-      open.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+    // Close all
+    list.querySelectorAll('.faq-item').forEach(other => {
+      other.classList.remove('open');
+      other.querySelector('.faq-item__q').setAttribute('aria-expanded', 'false');
+      other.querySelector('.faq-item__a').style.maxHeight = '';
     });
 
     if (!isOpen) {
       item.classList.add('open');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
       btn.setAttribute('aria-expanded', 'true');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
     }
   });
 }
 
-/* ── BRANCHES ───────────────────────────────── */
+/* ── BRANCHES / LOCATIONS ──────────────────── */
 
 function initBranches() {
   const info = document.getElementById('branchInfo');
@@ -531,13 +571,13 @@ function initBranches() {
     info.innerHTML = `
       <p class="branch-name">${b.name}</p>
       <p>${b.address}</p>
-      <a href="tel:${b.phone.replace(/\s/g, '')}">${b.phone}</a>
-      <a href="tel:${b.mobile.replace(/\s/g, '')}">${b.mobile}</a>
-      <a href="mailto:${b.email}">${b.email}</a>
+      <a href="https://www.instagram.com/yogislanguageschool/" target="_blank" rel="noopener">${b.phone}</a>
+      <a href="https://www.instagram.com/yogislanguageschool/" target="_blank" rel="noopener">${b.mobile}</a>
+      <a href="https://www.instagram.com/imyogisir/" target="_blank" rel="noopener">${b.email}</a>
       <p style="margin-top:0.75rem;font-size:0.75rem;letter-spacing:0.08em;color:var(--t-dim)">${b.hours}</p>`;
   }
 
-  showBranch('thane');
+  showBranch('nashik');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
@@ -548,7 +588,7 @@ function initBranches() {
   });
 }
 
-/* ── CONTACT FORM ───────────────────────────── */
+/* ── CONTACT FORM ──────────────────────────── */
 
 function initForm() {
   const form = document.getElementById('cForm');
@@ -560,15 +600,14 @@ function initForm() {
     const btn = form.querySelector('.form-btn');
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Sending…';
-
     setTimeout(() => {
-      form.hidden = true;
-      ok.hidden   = false;
+      form.style.display = 'none';
+      if (ok) ok.style.display = 'flex';
     }, 1200);
   });
 }
 
-/* ── SLOT-MACHINE REEL COUNTERS ─────────────── */
+/* ── NUMBER REEL COUNTERS ──────────────────── */
 
 function buildReel(el) {
   const target = parseInt(el.getAttribute('data-target'), 10);
@@ -607,7 +646,6 @@ function buildReel(el) {
     }
   });
 
-  el.replaceWith(reel);
   return reel;
 }
 
@@ -615,359 +653,424 @@ function initReels() {
   document.querySelectorAll('.counter').forEach(el => {
     const reel = buildReel(el);
     const cols  = reel.querySelectorAll('.reel__col');
+    el.replaceWith(reel);
 
     const obs = new IntersectionObserver(entries => {
-      if (!entries[0].isIntersecting) return;
-      obs.disconnect();
-
-      if (typeof gsap !== 'undefined') {
-        cols.forEach((col, i) => {
-          const d = parseInt(col.getAttribute('data-digit'), 10);
-          gsap.fromTo(
-            col.querySelector('.reel__strip'),
-            { yPercent: 0 },
-            {
-              yPercent: -(d * 10),
-              duration: 1.4 + i * 0.06,
-              ease: 'power4.out',
-              delay: i * 0.04,
-            }
-          );
-        });
-      }
-    }, { threshold: 0.5 });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          cols.forEach((col, i) => {
+            const strip = col.querySelector('.reel__strip');
+            if (!strip) return;
+            const d = parseInt(col.getAttribute('data-digit'), 10);
+            const digitEl = strip.querySelector('.reel__digit');
+            const h = digitEl ? digitEl.clientHeight : (col.clientHeight || 48);
+            setTimeout(() => {
+              strip.style.transition = `transform ${1.2 + i * 0.15}s cubic-bezier(0.16, 1, 0.3, 1)`;
+              strip.style.transform  = `translateY(-${d * h}px)`;
+            }, 80 + i * 60);
+          });
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
 
     obs.observe(reel);
   });
 }
 
-/* ── LENIS SMOOTH SCROLL ────────────────────── */
+/* ── LENIS SMOOTH SCROLL ───────────────────── */
 
 function initLenis() {
-  /* Lenis is loaded via CDN — access via window to satisfy strict TS linters */
+  if (typeof window['Lenis'] === 'undefined') return;
   const LenisCtor = window['Lenis'];
-  if (!LenisCtor) return null;
+
+  // Respect prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   const lenis = new LenisCtor({
-    lerp: 0.1,
+    duration: 1.2,
+    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
     smoothWheel: true,
-    syncTouch: false,
+    wheelMultiplier: 0.9,
+    touchMultiplier: 1.5
   });
 
-  /* Drive GSAP ScrollTrigger from Lenis virtual scroll */
-  lenis.on('scroll', () => {
-    if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.update();
-  });
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
 
-  gsap.ticker.add(time => lenis.raf(time * 1000));
-  gsap.ticker.lagSmoothing(0);
-
-  return lenis;
+  // Sync GSAP ScrollTrigger with Lenis
+  if (typeof ScrollTrigger !== 'undefined') {
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(time => lenis.raf(time * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
 }
 
-/* ── STATEMENT WORD-BY-WORD SCRUB ───────────── */
+/* ── STATEMENT WORD SCRUB ──────────────────── */
 
 function initStatementScrub() {
   const big = document.querySelector('.statement__big');
-  if (!big || typeof gsap === 'undefined') return;
+  if (!big || typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
   const raw   = big.innerHTML;
   const words = raw.trim().split(/\s+/);
   big.innerHTML = words.map(w => `<span class="word">${w}</span>`).join(' ');
 
   const wordEls = big.querySelectorAll('.word');
-  gsap.set(wordEls, { color: 'rgba(23,45,74,0.15)' });
 
-  gsap.to(wordEls, {
-    color: 'rgba(23,45,74,1)',
-    stagger: 0.06,
-    ease: 'none',
-    scrollTrigger: {
-      trigger: '.statement',
-      start: 'top 75%',
-      end: 'bottom 35%',
-      scrub: 0.8,
+  gsap.fromTo(wordEls,
+    { opacity: 0.15, y: 6 },
+    {
+      opacity: 1,
+      y: 0,
+      stagger: 0.04,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#statement',
+        start: 'top 75%',
+        end: 'top 25%',
+        scrub: 0.8
+      }
     }
-  });
+  );
 }
 
-/* ── GSAP ANIMATIONS ────────────────────────── */
+/* ── GSAP TIMELINES & SCROLLTRIGGERS ───────── */
 
 function initGSAP() {
-  gsap.registerPlugin(ScrollTrigger);
+  if (typeof gsap === 'undefined') return;
+  if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
-  /* ─ HERO ───────────────────────────────── */
+  // Staggered reveal for About page Why Choose Us items
+  const whyItems = document.querySelectorAll('.about-why__item');
+  if (whyItems.length && typeof ScrollTrigger !== 'undefined') {
+    gsap.from(whyItems, {
+      opacity: 0,
+      y: 24,
+      duration: 0.7,
+      stagger: 0.08,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.about-why__grid',
+        start: 'top 85%',
+        once: true
+      }
+    });
+  }
 
-  /* Hero line reveals — on load, staggered */
+  // 1. Hero Reveal Timeline
   const heroLines = document.querySelectorAll('.hero__h .ln span');
-  gsap.set(heroLines, { yPercent: 115 });
-  gsap.to(heroLines, {
-    yPercent: 0,
-    duration: 1.3,
-    ease: 'power4.out',
-    stagger: 0.14,
-    delay: 0.25,
-  });
+  const tl = gsap.timeline({ delay: 0.3 });
 
-  /* Hero supporting elements */
-  const heroSupport = ['#heroEyebrow', '#heroSub', '#heroBtns', '#heroFoot'];
-  gsap.set(heroSupport, { opacity: 0, y: 20 });
-  gsap.to(heroSupport, {
+  if (heroLines.length) {
+    tl.from(heroLines, {
+      y: '105%',
+      duration: 1.1,
+      ease: 'power4.out',
+      stagger: 0.12
+    });
+  }
+
+  const heroSupport = ['#heroRotator', '#heroSub', '#heroBtns'];
+  tl.to(heroSupport, {
     opacity: 1,
     y: 0,
-    duration: 1.0,
+    duration: 0.8,
     ease: 'power3.out',
-    stagger: 0.12,
-    delay: 0.85,
-  });
+    stagger: 0.08
+  }, '-=0.6');
 
-  /* Hero: dramatic parallax — image and veil separate rates */
-  gsap.to('#heroBgImg', {
-    yPercent: 42,
-    ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-  });
-  gsap.to('.hero__bg-veil', {
-    opacity: 0.95,
-    ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: '60% top', scrub: true },
-  });
+  // Hero BG Parallax
+  const heroBg = document.getElementById('heroBgImg');
+  if (heroBg && typeof ScrollTrigger !== 'undefined') {
+    gsap.to(heroBg, {
+      y: '22%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
 
-  /* ─ SECTION HEADINGS — scroll-scrubbed line reveals ── */
+  // 2. Heading line reveals across sections
+  document.querySelectorAll('h2 .ln span, .contact__locs-h .ln span').forEach(span => {
+    // Skip hero
+    if (span.closest('.hero')) return;
+    const h2 = span.closest('h2') || span.closest('.contact__locs-h');
+    if (!h2 || typeof ScrollTrigger === 'undefined') return;
 
-  document.querySelectorAll('h2 .ln span').forEach(span => {
-    const h2 = span.closest('h2');
-    /* Skip headings with their own dedicated ScrollTrigger blocks below */
-    if (h2.closest('.mvv__panel')) return;
-    if (h2.classList.contains('services__hed')) return;
-    if (h2.classList.contains('cta-full__h')) return;
-    if (h2.classList.contains('dest__hed')) return;
-    const trigger = span.closest('.ln');
     gsap.from(span, {
-      yPercent: 110,
+      y: '105%',
+      duration: 1.0,
       ease: 'power4.out',
       scrollTrigger: {
-        trigger,
+        trigger: span.closest('.ln'),
         start: 'top 88%',
-        end: 'top 55%',
-        scrub: 0.5,
+        toggleActions: 'play none none none'
       }
     });
   });
 
-  /* ─ ABOUT ──────────────────────────────── */
-
-  /* Clip-path image reveals — scroll-scrubbed */
-  document.querySelectorAll('.clip-reveal img').forEach(img => {
-    gsap.fromTo(img,
+  // 3. Clip reveals on photos
+  document.querySelectorAll('.clip-reveal').forEach(el => {
+    if (typeof ScrollTrigger === 'undefined') return;
+    gsap.fromTo(el,
       { clipPath: 'inset(100% 0 0 0)' },
       {
         clipPath: 'inset(0% 0 0 0)',
-        ease: 'power3.out',
+        duration: 1.2,
+        ease: 'power3.inOut',
         scrollTrigger: {
-          trigger: img.closest('.clip-reveal'),
-          start: 'top 85%',
-          end: 'top 35%',
-          scrub: 0.6,
+          trigger: el,
+          start: 'top 82%',
+          toggleActions: 'play none none none'
         }
       }
     );
   });
 
-  /* About images: asymmetric parallax for depth */
-  gsap.to('.about__img-main img', {
-    yPercent: -12,
-    ease: 'none',
-    scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
-  gsap.to('.about__img-sm img', {
-    yPercent: -24,
-    ease: 'none',
-    scrollTrigger: { trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
+  // 4. Mission (MVV) horizontal pin scroll on desktop
+  const mvv = document.getElementById('mission');
+  const track = document.getElementById('mvvTrack');
+  if (mvv && track && typeof ScrollTrigger !== 'undefined') {
+    const isDesktop = window.matchMedia('(min-width: 900px)').matches;
+    if (isDesktop) {
+      const panels = track.querySelectorAll('.mvv__panel');
+      const totalWidth = track.scrollWidth - window.innerWidth;
 
-  /* ─ MVV STICKY PANELS — content reveals ── */
-
-  document.querySelectorAll('.mvv__panel').forEach(panel => {
-    /* Each panel's heading lines: scrub-in as panel enters */
-    panel.querySelectorAll('.mvv__h .ln span').forEach(span => {
-      gsap.from(span, {
-        yPercent: 110,
-        ease: 'power4.out',
+      gsap.to(track, {
+        x: () => -totalWidth,
+        ease: 'none',
         scrollTrigger: {
-          trigger: panel,
-          start: 'top 90%',
-          end: 'top 45%',
-          scrub: 0.5,
+          trigger: mvv,
+          start: 'top top',
+          end: () => `+=${totalWidth + 400}`,
+          pin: true,
+          scrub: 0.8,
+          invalidateOnRefresh: true
         }
       });
-    });
 
-    /* Eyebrow + body copy: staggered fade-up */
-    const copy = panel.querySelectorAll('.eyebrow, .mvv__p');
-    gsap.from(copy, {
+      // Panel content reveals
+      panels.forEach((panel, i) => {
+        const copy = panel.querySelectorAll('.eyebrow, .mvv__p');
+        gsap.from(copy, {
+          opacity: 0,
+          y: 24,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: panel,
+            containerAnimation: gsap.getTweensOf(track)[0],
+            start: 'left 80%',
+            toggleActions: 'play none none none'
+          }
+        });
+      });
+    }
+  }
+
+
+
+  // 7. Journey steps reveal
+  const jSteps = document.querySelectorAll('.j-step');
+  if (jSteps.length && typeof ScrollTrigger !== 'undefined') {
+    gsap.from(jSteps, {
       opacity: 0,
-      y: 30,
-      duration: 0.9,
-      stagger: 0.14,
+      y: 20,
+      duration: 0.5,
+      stagger: 0.06,
       ease: 'power3.out',
       scrollTrigger: {
-        trigger: panel,
+        trigger: '#journey',
         start: 'top 70%',
-        toggleActions: 'play none none reset',
+        toggleActions: 'play none none none'
       }
     });
+  }
 
-  });
-
-  /* ─ SERVICES — clip-path wipe reveal ───── */
-
-  /* Section heading */
-  document.querySelectorAll('.services__hed .ln span').forEach(span => {
-    gsap.from(span, {
-      yPercent: 110,
-      ease: 'power4.out',
-      scrollTrigger: { trigger: span.closest('.ln'), start: 'top 88%', end: 'top 50%', scrub: 0.5 }
-    });
-  });
-
-  /* Each service row wipes in from left */
-  document.querySelectorAll('.svc').forEach((svc, i) => {
-    gsap.fromTo(svc,
-      { opacity: 0, clipPath: 'inset(0 100% 0 0)' },
-      {
-        opacity: 1,
-        clipPath: 'inset(0 0% 0 0)',
-        duration: 0.7,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: svc,
-          start: 'top 88%',
-          toggleActions: 'play none none reset',
-        },
-        delay: (i % 3) * 0.06,
+  // 7b. Impact benefits reveal
+  const impactItems = document.querySelectorAll('.impact__point, .impact__item');
+  if (impactItems.length && typeof ScrollTrigger !== 'undefined') {
+    gsap.from(impactItems, {
+      opacity: 0,
+      y: 22,
+      duration: 0.6,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#impact',
+        start: 'top 75%',
+        toggleActions: 'play none none none'
       }
-    );
-  });
-
-  /* ─ CTA SECTION ────────────────────────── */
-
-  gsap.to('.cta-full__img', {
-    yPercent: 22,
-    ease: 'none',
-    scrollTrigger: { trigger: '.cta-full', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
-
-  document.querySelectorAll('.cta-full__h .ln span').forEach(span => {
-    gsap.from(span, {
-      yPercent: 110,
-      ease: 'power4.out',
-      scrollTrigger: { trigger: '.cta-full', start: 'top 88%', end: 'top 50%', scrub: 0.5 }
     });
-  });
+  }
 
-  /* ─ DESTINATIONS heading ────────────────── */
-
-  document.querySelectorAll('.dest__hed .ln span').forEach(span => {
-    gsap.from(span, {
-      yPercent: 110,
-      ease: 'power4.out',
-      scrollTrigger: { trigger: span.closest('.ln'), start: 'top 90%', end: 'top 55%', scrub: 0.5 }
+  // 8. About Why Choose Us items
+  const aboutWhyItems = document.querySelectorAll('.about-why__item');
+  if (aboutWhyItems.length && typeof ScrollTrigger !== 'undefined') {
+    gsap.from(aboutWhyItems, {
+      opacity: 0,
+      y: 20,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '#why-choose-us',
+        start: 'top 75%',
+        toggleActions: 'play none none none'
+      }
     });
-  });
+  }
 
-  /* ─ WHY CRANBERRY — reasons scrub in ───── */
-
-  gsap.from('.why__photo img', {
-    scale: 1.12,
-    ease: 'none',
-    scrollTrigger: { trigger: '.why', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
-
-  /* ─ TEAM GRID ──────────────────────────── */
-
-  gsap.from('.tmember', {
-    opacity: 0,
-    y: 44,
-    duration: 0.85,
-    stagger: 0.09,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: '.team__grid', start: 'top 82%', toggleActions: 'play none none reset' },
-  });
-
-  /* ─ IMPACT NUMBERS — section entrance ──── */
-
-  gsap.from('.impact__inner', {
-    opacity: 0,
-    y: 40,
-    duration: 1,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: '.impact', start: 'top 78%', toggleActions: 'play none none reset' },
-  });
-
-  /* ─ UNIVERSITIES marquee entrance ──────── */
-
-  gsap.from('.univs__track-wrap', {
-    opacity: 0,
-    y: 28,
-    stagger: 0.15,
-    duration: 0.8,
-    ease: 'power3.out',
-    scrollTrigger: { trigger: '.univs__header', start: 'top 80%', toggleActions: 'play none none reset' },
-  });
+  // 10. Full CTA BG Parallax
+  const ctaBg = document.querySelector('.cta-full__bg img');
+  if (ctaBg && typeof ScrollTrigger !== 'undefined') {
+    gsap.to(ctaBg, {
+      y: '20%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '#cta',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+  }
 }
 
-/* ── INTERSECTION OBSERVER REVEALS ──────────── */
+/* ── HERO HEADLINE ROTATOR ─────────────────── */
+
+function initHeroHeadlineRotator() {
+  const phrases = document.querySelectorAll('.hero__rotator-phrase');
+  if (!phrases || phrases.length <= 1) return;
+
+  let currentIndex = 0;
+  const total = phrases.length;
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let rotatorTimer = null;
+
+  function rotateToNext() {
+    const currentEl = phrases[currentIndex];
+    currentIndex = (currentIndex + 1) % total;
+    const nextEl = phrases[currentIndex];
+
+    if (prefersReducedMotion || typeof gsap === 'undefined') {
+      currentEl.style.opacity = '0';
+      currentEl.classList.remove('is-active');
+      currentEl.setAttribute('aria-hidden', 'true');
+
+      nextEl.classList.add('is-active');
+      nextEl.removeAttribute('aria-hidden');
+      nextEl.style.opacity = '1';
+      rotatorTimer = setTimeout(rotateToNext, 2800);
+      return;
+    }
+
+    // GSAP Smooth Fade & Subtle Vertical Float Transition
+    gsap.to(currentEl, {
+      opacity: 0,
+      y: -10,
+      duration: 0.45,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        currentEl.classList.remove('is-active');
+        currentEl.setAttribute('aria-hidden', 'true');
+        gsap.set(currentEl, { y: 12 });
+      }
+    });
+
+    nextEl.classList.add('is-active');
+    nextEl.removeAttribute('aria-hidden');
+    gsap.fromTo(
+      nextEl,
+      { opacity: 0, y: 12 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: 'power2.out',
+        delay: 0.1,
+        onComplete: () => {
+          gsap.delayedCall(2.8, rotateToNext);
+        }
+      }
+    );
+  }
+
+  // Initial delay: show the first phrase for 2.8s before rotating
+  if (typeof gsap !== 'undefined') {
+    gsap.delayedCall(2.8, rotateToNext);
+  } else {
+    rotatorTimer = setTimeout(rotateToNext, 2800);
+  }
+}
+
+/* ── INTERSECTION OBSERVER FALLBACKS ───────── */
 
 function initRevealObserver() {
+  if (typeof gsap !== 'undefined') return; // GSAP handles it
+  if (!('IntersectionObserver' in window)) return;
+
   const obs = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-
-      /* Staggered delay for siblings */
-      const siblings = el.parentElement.querySelectorAll(
-        '.fade-up, .fade-right, .fade-svc, .testcard, .jstep'
-      );
-      const idx = Array.from(siblings).indexOf(el);
-      el.style.transitionDelay = (idx * 0.07) + 's';
-      el.classList.add('revealed');
-      obs.unobserve(el);
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        const siblings = el.parentElement.querySelectorAll(
+          '.j-step, .impact__point, .impact__item, .about-why__item'
+        );
+        const idx = Array.from(siblings).indexOf(el);
+        el.style.transition = `opacity 0.6s ease ${idx * 0.07}s, transform 0.6s ease ${idx * 0.07}s`;
+        obs.unobserve(el);
+      }
     });
   }, { threshold: 0.15 });
 
-  /* .svc/.fade-svc handled by GSAP ScrollTrigger; exclude here */
-  document.querySelectorAll('.fade-up, .fade-right, .testcard, .jstep').forEach(el => {
+  document.querySelectorAll(
+    '.j-step, .impact__point, .impact__item, .about-why__item'
+  ).forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
     obs.observe(el);
   });
 }
 
-/* ── BOOT ───────────────────────────────────── */
+/* ── BOOTSTRAP ─────────────────────────────── */
 
 function boot() {
-  initLoader();
-  initNav();
-  initDestinations();
-  initUniversities();
-  initTestimonials();
-  initFAQ();
-  initBranches();
-  initForm();
-  initRevealObserver();
-  initCursor();
+  const safeRun = (fn, name) => {
+    try { fn(); } catch (err) { console.warn(`[Init] ${name} error:`, err); }
+  };
 
-  /* Wait for GSAP + Lenis (both deferred) */
+  safeRun(initLoader, 'Loader');
+  safeRun(initCursor, 'Cursor');
+  safeRun(initNav, 'Nav');
+  safeRun(initDestinations, 'Destinations');
+  safeRun(initBranches, 'Branches');
+  safeRun(initForm, 'Form');
+  safeRun(initReels, 'Reels');
+  safeRun(initLenis, 'Lenis');
+
+  // GSAP animations after libraries load
   let elapsed = 0;
   const check = setInterval(() => {
     elapsed += 50;
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    if (typeof gsap !== 'undefined' || elapsed > 3000) {
       clearInterval(check);
-      initLenis();          /* Smooth scroll — must be before ScrollTrigger usage */
-      initGSAP();           /* All scroll-driven animations */
-      initStatementScrub(); /* Needs ScrollTrigger, runs after initGSAP sets it up */
-      initReels();          /* Slot-machine counters — uses GSAP internally */
-    } else if (elapsed > 4000) {
-      clearInterval(check);
+      safeRun(initStatementScrub, 'StatementScrub');
+      safeRun(initGSAP, 'GSAP');
+      safeRun(initHeroHeadlineRotator, 'HeroHeadlineRotator');
+      safeRun(initRevealObserver, 'RevealObserver');
     }
   }, 50);
 }
