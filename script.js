@@ -821,19 +821,34 @@ function initGSAP() {
   // 3. Clip reveals on photos
   document.querySelectorAll('.clip-reveal').forEach(el => {
     if (typeof ScrollTrigger === 'undefined') return;
-    gsap.fromTo(el,
-      { clipPath: 'inset(100% 0 0 0)' },
-      {
-        clipPath: 'inset(0% 0 0 0)',
-        duration: 1.2,
-        ease: 'power3.inOut',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 82%',
-          toggleActions: 'play none none none'
+    const rect = el.getBoundingClientRect();
+    const isAboveOrInView = rect.top < window.innerHeight * 0.9;
+
+    if (isAboveOrInView) {
+      gsap.fromTo(el,
+        { opacity: 0.2, clipPath: 'inset(15% 0 0 0)' },
+        {
+          opacity: 1,
+          clipPath: 'inset(0% 0 0 0)',
+          duration: 0.9,
+          ease: 'power3.out'
         }
-      }
-    );
+      );
+    } else {
+      gsap.fromTo(el,
+        { clipPath: 'inset(100% 0 0 0)' },
+        {
+          clipPath: 'inset(0% 0 0 0)',
+          duration: 1.2,
+          ease: 'power3.inOut',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 82%',
+            toggleActions: 'play none none none'
+          }
+        }
+      );
+    }
   });
 
   // 4. Mission (MVV) horizontal pin scroll on desktop
@@ -880,38 +895,58 @@ function initGSAP() {
 
 
 
-  // 7. Journey steps reveal
-  const jSteps = document.querySelectorAll('.j-step');
-  if (jSteps.length && typeof ScrollTrigger !== 'undefined') {
-    gsap.from(jSteps, {
-      opacity: 0,
-      y: 20,
-      duration: 0.5,
-      stagger: 0.06,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '#journey',
-        start: 'top 70%',
-        toggleActions: 'play none none none'
+  // 7. Journey stages reveal
+  const stages = document.querySelectorAll('.pathway__stage');
+  if (stages.length && typeof ScrollTrigger !== 'undefined') {
+    stages.forEach(stage => {
+      const stageHead = stage.querySelector('.pathway__stage-head');
+      const steps = stage.querySelectorAll('.j-step');
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: stage,
+          start: 'top 82%',
+          toggleActions: 'play none none none'
+        }
+      });
+
+      if (stageHead) {
+        tl.from(stageHead, {
+          opacity: 0,
+          x: -16,
+          duration: 0.45,
+          ease: 'power3.out'
+        });
       }
+
+      tl.from(steps, {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'power3.out'
+      }, '-=0.25');
     });
   }
 
   // 7b. Impact benefits reveal
   const impactItems = document.querySelectorAll('.impact__point, .impact__item');
   if (impactItems.length && typeof ScrollTrigger !== 'undefined') {
-    gsap.from(impactItems, {
-      opacity: 0,
-      y: 22,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '#impact',
-        start: 'top 75%',
-        toggleActions: 'play none none none'
+    gsap.fromTo(impactItems,
+      { opacity: 0, y: 18 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.08,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '#impact',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
       }
-    });
+    );
   }
 
   // 8. About Why Choose Us items
